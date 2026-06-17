@@ -1,0 +1,32 @@
+{
+  "name": "homeward",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Homeward — Lost Pet Recovery Network (bird & exotic focus). Phase 0 foundation.",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r --filter @homeward/shared build && pnpm -r --filter @homeward/api build",
+    "dev": "pnpm -r --parallel --filter @homeward/api --filter @homeward/web dev",
+    "dev:api": "pnpm --filter @homeward/api dev",
+    "dev:web": "pnpm --filter @homeward/web dev",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
+  }
+}

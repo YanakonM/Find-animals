@@ -1,0 +1,16 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# esbuild powers tsx/vite/vitest/tsup; mongodb-memory-server downloads the mongod
+# binary used by the API test suite. msgpackr-extract is an optional native accel
+# for bullmq and is not required.
+allowBuilds:
+  esbuild: true
+  mongodb-memory-server: true
+  msgpackr-extract: false
+
+# Dedupe ioredis to a single version so the instance we create matches the type
+# bullmq expects for its `connection` option (avoids dual-version type clash).
+overrides:
+  ioredis: 5.10.1
