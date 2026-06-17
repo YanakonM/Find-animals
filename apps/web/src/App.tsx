@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { SafeUser } from '@homeward/shared';
 import { api } from './lib/api';
 import { Login } from './pages/Login';
-import { Me } from './pages/Me';
+import { Dashboard } from './pages/Dashboard';
 
 export function App() {
   const [user, setUser] = useState<SafeUser | null>(null);
@@ -27,7 +27,7 @@ export function App() {
       {loading ? (
         <div className="card">Loading…</div>
       ) : user ? (
-        <Me user={user} onLogout={() => setUser(null)} />
+        <Dashboard user={user} onLogout={() => setUser(null)} />
       ) : (
         <Login onAuthed={setUser} />
       )}

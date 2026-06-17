@@ -9,6 +9,7 @@ allowBuilds:
   esbuild: true
   mongodb-memory-server: true
   msgpackr-extract: false
+  sharp: true
 
 # Dedupe ioredis to a single version so the instance we create matches the type
 # bullmq expects for its `connection` option (avoids dual-version type clash).

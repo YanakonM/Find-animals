@@ -24,6 +24,12 @@ const envSchema = z.object({
   MONGODB_URI: z.string().min(1, 'MONGODB_URI is required'),
   REDIS_URL: z.string().default('redis://localhost:6379'),
 
+  // Public base URL of this API — used to build absolute URLs for locally-stored
+  // media/posters (so they work in shared links and on phones).
+  PUBLIC_API_URL: z.string().default('http://localhost:4000'),
+  // Local media fallback dir (used when Cloudinary is not configured).
+  UPLOAD_DIR: z.string().default('./uploads'),
+
   CLOUDINARY_CLOUD_NAME: z.string().optional(),
   CLOUDINARY_API_KEY: z.string().optional(),
   CLOUDINARY_API_SECRET: z.string().optional(),

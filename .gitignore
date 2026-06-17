@@ -27,3 +27,6 @@ Thumbs.db
 # Test / tooling caches
 .vitest/
 .eslintcache
+
+# Locally-stored media (dev fallback when Cloudinary is unconfigured)
+uploads/

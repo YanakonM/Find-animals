@@ -4,6 +4,7 @@ import { mongoStatus } from '../db/mongoose.js';
 import { queueStatus } from '../lib/queue.js';
 import { cloudinaryStatus } from '../lib/cloudinary.js';
 import { lineVerifier } from '../lib/lineVerifier.js';
+import { mediaStore } from '../lib/media.js';
 
 export const healthRouter = Router();
 
@@ -20,6 +21,7 @@ healthRouter.get(
         mongo,
         redis: queue,
         cloudinary: cloudinaryStatus(),
+        media: mediaStore.kind,
         lineAuth: lineVerifier.mode,
       },
     });
